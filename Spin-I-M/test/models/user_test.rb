@@ -54,5 +54,15 @@ class UserTest < ActiveSupport::TestCase
     refute phoney.valid?
   end
 
+  test "password should be in existence" do
+    @user.password = @user.password_confirmation = "  " * 5
+    refute @user.valid?
+  end
+
+  test "password should have minimum length" do
+    @user.password = @user.password_confirmation = "b" * 5
+    refute @user.valid?
+  end
+
 
 end
