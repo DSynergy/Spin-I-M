@@ -42,4 +42,13 @@ class UserTest < ActiveSupport::TestCase
       refute @user.valid?, "#{invalid_address.inspect} should be invalid"
     end
   end
+
+  test "email addresses should be unique" do
+    phoney = @user.dup
+    phoney.email = @user.email.upcase
+    @user.save
+    refute phoney.valid?
+  end
+
+  
 end
