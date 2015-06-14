@@ -8,4 +8,5 @@ class User < ActiveRecord::Base
   validates_format_of :email, :with => VALID_REGEX
 
   has_many :playlists, through: :user_playlists
+  has_secure_password
 end
