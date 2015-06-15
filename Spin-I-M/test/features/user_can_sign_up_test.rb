@@ -18,6 +18,7 @@ class UserCanSignUpTest < ActionDispatch::IntegrationTest
     visit root_path
     # this breaks because a person needs to be signed in to go
     # to the playlist#index. Which happens to be the root path
+    click_link_or_button "Register"
     fill_in "user[username]", with: "goober"
     fill_in "user[email]", with: " "
     fill_in "user[password]", with: "password"

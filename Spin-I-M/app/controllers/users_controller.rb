@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  skip_before_filter :user_logged_in_check
+  # skip_before_filter :user_logged_in_check
 
   def new
     @user = User.new
