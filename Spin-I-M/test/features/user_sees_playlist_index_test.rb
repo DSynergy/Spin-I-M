@@ -5,7 +5,7 @@ class UserSeesPlaylistIndexTest < ActionDispatch::IntegrationTest
 
   test "user sees playlist index when they sign in" do
     skip
-    visit "/"
+    visit root_path
     assert_equal new_user_path, current_path
 
     click_link_or_button "Register"
@@ -13,7 +13,6 @@ class UserSeesPlaylistIndexTest < ActionDispatch::IntegrationTest
     fill_in "user[email]", with: "gooberface@gmail.com"
     fill_in "user[password]", with: "password"
     click_link_or_button "Register For Spin-I-M"
-    save_and_open_page
     assert_equal playlists_path, current_path
   end
 

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'static_pages/Home'
+  get 'static_pages/home'
 
-  root to: 'playlists#index'
+  root 'static_pages#home'
+
+  # root to: 'playlists#index'
 
   resources :users
   resources :playlists, only: [:index, :show]

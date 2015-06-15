@@ -4,7 +4,8 @@ class UserCanSignUpTest < ActionDispatch::IntegrationTest
   include Capybara::DSL
 
   test "user can sign up" do
-    visit "/"
+    visit root_path
+    click_link_or_button "Register"
     fill_in "user[username]", with: "goober"
     fill_in "user[email]", with: "gooberface@gmail.com"
     fill_in "user[password]", with: "password"
@@ -15,7 +16,6 @@ class UserCanSignUpTest < ActionDispatch::IntegrationTest
 
   test "user redirects to new user form if invalid form inputs" do
     visit root_path
-    save_and_open_page
     # this breaks because a person needs to be signed in to go
     # to the playlist#index. Which happens to be the root path
     fill_in "user[username]", with: "goober"
