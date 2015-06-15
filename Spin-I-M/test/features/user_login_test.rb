@@ -20,7 +20,6 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     fill_in "Password", with: "password"
 
     click_link_or_button "Login To Spin-I-M"
-    save_and_open_page
     assert_equal playlists_path, current_path
   end
 
