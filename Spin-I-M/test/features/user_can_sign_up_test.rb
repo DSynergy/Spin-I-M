@@ -14,7 +14,10 @@ class UserCanSignUpTest < ActionDispatch::IntegrationTest
   end
 
   test "user redirects to new user form if invalid form inputs" do
-    visit "/"
+    visit root_path
+    save_and_open_page
+    # this breaks because a person needs to be signed in to go
+    # to the playlist#index. Which happens to be the root path
     fill_in "user[username]", with: "goober"
     fill_in "user[email]", with: " "
     fill_in "user[password]", with: "password"

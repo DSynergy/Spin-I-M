@@ -3,15 +3,9 @@ require 'test_helper'
 class UserSeesPlaylistIndexTest < ActionDispatch::IntegrationTest
   include Capybara::DSL
 
-  # def setup
-  #   @user = User.create(username: "goober",
-  #                       email: "gooberface@gmail.com",
-  #                       password: "password")
-  # end
-
   test "user sees playlist index when they sign in" do
+    skip
     visit "/"
-
     assert_equal new_user_path, current_path
 
     click_link_or_button "Register"
@@ -19,7 +13,7 @@ class UserSeesPlaylistIndexTest < ActionDispatch::IntegrationTest
     fill_in "user[email]", with: "gooberface@gmail.com"
     fill_in "user[password]", with: "password"
     click_link_or_button "Register For Spin-I-M"
-
+    save_and_open_page
     assert_equal playlists_path, current_path
   end
 
