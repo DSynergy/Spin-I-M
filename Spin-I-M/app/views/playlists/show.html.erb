@@ -16,6 +16,10 @@
 
 <h3>Voting/Queueing</h3>
 
+<% @songs.each do |song| %>
+  <%= song.title %> : Popularity => <%= song.popularity %><br>
+<% end %>
+
 <div class="breadcrumb">
   <a href="javascript:void(0)">One</a>
   <a href="javascript:void(0)">Two</a>

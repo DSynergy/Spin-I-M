@@ -4,19 +4,19 @@
 <% @playlists.each do |playlist| %>
 
   <div class="card">
+    <a href="/playlists/<%=playlist.id %>">
+      <div class="card-image">
+          <%# img_tag("#{playlist.currently_playing.image}") %>
+      </div>
 
-    <div class="card-image">
-      <%# img_tag("#{playlist.currently_playing.image}") %>
-    </div>
+      <div class="card-header">
+        <%= playlist.name %>
+      </div>
 
-    <div class="card-header">
-      <%= playlist.name %>
-    </div>
-
-    <div class="card-copy">
-      <p><%#playlist.description %></p>
-    </div>
-
+      <div class="card-copy">
+        <p><%#playlist.description %></p>
+      </div>
+    </a>
   </div>
 
 <% end %>
