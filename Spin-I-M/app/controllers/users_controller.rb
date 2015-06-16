@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  # skip_before_action :user_logged_in_check, only: [:new, :create]
-  # before_filter :authorize!
+  skip_before_action :user_logged_in_check, only: [:new, :create]
 
   def new
     @user = User.new
@@ -28,9 +27,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
 
-  def authorize!
-    if current_user.nil?
-      redirect_to login_path, flash[:alert] = "You Can't Go There..."
-    end
-  end
 end

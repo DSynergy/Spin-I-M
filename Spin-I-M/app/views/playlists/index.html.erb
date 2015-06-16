@@ -1,21 +1,23 @@
 <%= render "/layouts/nav_bar" %>
 
 <div class="cards">
-
 <% @playlists.each do |playlist| %>
 
   <div class="card">
+
     <div class="card-image">
-      <%=# img_tag("#{playlist.song.currently_playing.image}") %>
+      <%# img_tag("#{playlist.currently_playing.image}") %>
     </div>
+
     <div class="card-header">
-    <%= playlist.name %>
+      <%= playlist.name %>
     </div>
+
     <div class="card-copy">
-      <p><%=#playlist.description %></p>
+      <p><%#playlist.description %></p>
     </div>
+
   </div>
 
-  <% end  %>
-
+<% end %>
 </div>
