@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   # skip_before_action :user_logged_in_check, only: [:new, :create]
+  # before_filter :authorize!
 
   def new
     @user = User.new
@@ -18,12 +19,18 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by(id: current_user.id)
+    @user = User.find(params[:id])
   end
 
   private
 
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
+  end
+
+  def authorize!
+    if current_user.nil?
+      redirect_to login_path, alert: "You Can't Go There..."
+    end
   end
 end
