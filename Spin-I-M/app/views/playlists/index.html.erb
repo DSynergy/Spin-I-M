@@ -1,1 +1,23 @@
-<%# link_to "Register", new_user_path %>
+<%= render "/layouts/nav_bar" %>
+
+<div class="cards">
+<% @playlists.each do |playlist| %>
+
+  <div class="card">
+
+    <div class="card-image">
+      <%# img_tag("#{playlist.currently_playing.image}") %>
+    </div>
+
+    <div class="card-header">
+      <%= playlist.name %>
+    </div>
+
+    <div class="card-copy">
+      <p><%#playlist.description %></p>
+    </div>
+
+  </div>
+
+<% end %>
+</div>
