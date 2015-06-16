@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # skip_before_filter :user_logged_in_check
+  skip_before_action :user_logged_in_check, only: [:new, :create]
 
   def new
     @user = User.new
@@ -14,7 +14,6 @@ class UsersController < ApplicationController
     else
       # flash[:error] = @user.errors.full_messages
       redirect_to new_user_path
-      # investigate this some more, why render :new don't work no more
     end
   end
 

@@ -8,6 +8,7 @@ require File.expand_path('../../config/environment', __FILE__)
 require 'rails/test_help'
 require 'minitest/pride'
 require 'capybara/rails'
+require 'mocha/mini_test'
 require 'pry'
 
 class ActiveSupport::TestCase

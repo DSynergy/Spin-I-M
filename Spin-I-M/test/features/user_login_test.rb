@@ -23,5 +23,13 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     assert_equal playlists_path, current_path
   end
 
+  test "user cannot login without email and password" do
+
+  end
+
+  test "registered user can view their profile" do
+    ApplicationController
+  end
+
 
 end

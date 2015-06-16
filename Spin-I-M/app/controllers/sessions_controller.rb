@@ -1,9 +1,9 @@
 class SessionsController < ApplicationController
+  skip_before_action :user_logged_in_check, only: [:create]
 
   def create
    @user = User.find_by(email: params[:session][:email])
     if @user && @user.authenticate(params[:session][:password])
-    #  binding.pry
       flash[:notice] = "Successfully logged in #{@user.username}"
       session[:user_id] = @user.id
       redirect_to playlists_path
