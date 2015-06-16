@@ -1,3 +1,5 @@
+<%= render "/layouts/nav_bar" %>
+
 <h1><%= @playlist.name %></h1>
 
 <h3>Current Chat</h3>
@@ -5,17 +7,12 @@
 </div>
 
 <p>
-<%= text_area_tag(:message, nil, size: "60x3") %>
+  <%= text_area_tag(:message, nil, size: "60x3", id: "text_box") %>
 </p>
 
 <p>
 <button id="be_heard" input[type="submit"]>Be Heard!</button>
 </p>
-
-<h1>Voting/Queueing</h1>
-<%= render "/layouts/nav_bar" %>
-
-<h1><% @playlist.name %></h1>
 
 <h3>Voting/Queueing</h3>
 

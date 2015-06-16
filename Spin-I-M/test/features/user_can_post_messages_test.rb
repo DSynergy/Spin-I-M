@@ -10,25 +10,25 @@ class UserMessageTest < ActionDispatch::IntegrationTest
                        password_confirmation: "password")
 
     playlist = Playlist.create(name: "Hip Hop")
+    login(user)
 
     visit playlist_path(playlist.id)
     assert_equal playlist_path(playlist.id), current_path 
 
-    fill_in "message", with: "new message"
+    fill_in "text_box", with: "crazy message"
     click_on "Be Heard!"
-    assert page.has_content?("new message")
-    fill_in "message", with: "second message"
+    assert page.has_content?("crazy message")
+    fill_in "text_box", with: "second crazy message"
     click_on "Be Heard!"
-    assert page.has_content?("second message")
-    save_and_open_page
+    assert page.has_content?("second crazy message")
   end
 
   private
 
   def login(user)
-    visit new_session_path
-    fill_in "user[email]", with: user.email
-    fill_in "user[password]", with: user.password
-    click_on "Log In"
+    visit login_path 
+    fill_in "session[email]", with: user.email
+    fill_in "session[password]", with: user.password
+    click_on "Login To Spin-I-M"
   end
 end
