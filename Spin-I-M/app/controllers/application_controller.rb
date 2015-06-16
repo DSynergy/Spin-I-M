@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
 
   def user_logged_in_check
     if current_user.nil?
-      flash[:alert] = "You Can't Go There..."
+      flash[:alert] = "Unauthorized Access!"
       redirect_to login_path
     end
   end
