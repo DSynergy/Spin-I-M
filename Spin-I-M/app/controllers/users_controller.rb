@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
   def authorize!
     if current_user.nil?
-      redirect_to login_path, alert: "You Can't Go There..."
+      redirect_to login_path, flash[:alert] = "You Can't Go There..."
     end
   end
 end
