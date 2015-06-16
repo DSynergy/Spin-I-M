@@ -11,7 +11,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       redirect_to playlists_path
-      flash[:notice] = "Welcome to Your Spin-I-M"
+      flash[:success] = "Welcome to Your Spin-I-M"
     else
       # flash[:error] = @user.errors.full_messages
       redirect_to new_user_path

@@ -45,6 +45,13 @@ GEM
       rack (>= 0.9.0)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bitters (1.0.0)
+      bourbon (>= 3.2)
+      sass (>= 3.2)
+      thor
+    bourbon (4.2.3)
+      sass (~> 3.4)
+      thor
     builder (3.2.2)
     byebug (5.0.0)
       columnize (= 0.9.0)
@@ -70,7 +77,7 @@ GEM
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     i18n (0.7.0)
-    jbuilder (2.2.16)
+    jbuilder (2.3.0)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     jquery-rails (4.0.3)
@@ -92,6 +99,9 @@ GEM
     mocha (1.1.0)
       metaclass (~> 0.0.1)
     multi_json (1.11.1)
+    neat (1.7.2)
+      bourbon (>= 4.0)
+      sass (>= 3.3)
     nokogiri (1.6.6.2)
       mini_portile (~> 0.6.0)
     pg (0.18.2)
@@ -170,6 +180,8 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   better_errors
   binding_of_caller
+  bitters
+  bourbon
   byebug
   capybara
   coffee-rails (~> 4.1.0)
@@ -177,6 +189,7 @@ DEPENDENCIES
   jquery-rails
   launchy
   mocha
+  neat
   pg
   pry
   rails (= 4.2.1)
