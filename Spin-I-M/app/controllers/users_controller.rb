@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  # skip_before_filter :user_logged_in_check
+  # skip_before_action :user_logged_in_check, only: [:new, :create]
+  # before_filter :authorize!
 
   def new
     @user = User.new
@@ -14,17 +15,22 @@ class UsersController < ApplicationController
     else
       # flash[:error] = @user.errors.full_messages
       redirect_to new_user_path
-      # investigate this some more, why render :new don't work no more
     end
   end
 
   def show
-    @user = User.find_by(id: current_user.id)
+    @user = User.find(params[:id])
   end
 
   private
 
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
+  end
+
+  def authorize!
+    if current_user.nil?
+      redirect_to login_path, alert: "You Can't Go There..."
+    end
   end
 end
