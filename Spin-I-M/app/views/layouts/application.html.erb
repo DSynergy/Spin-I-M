@@ -8,7 +8,17 @@
 </head>
 <body>
 
-<%= yield %>
+  <div class="container-fluid">
+
+    <div class="messsages">
+      <% flash.each do |name, msg| %>
+        <%= content_tag :div, msg, id: "flash-#{name}" %>
+      <% end %>
+    </div>
+
+    <%= yield %>
+
+  </div>
 
 </body>
 </html>
