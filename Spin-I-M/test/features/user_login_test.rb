@@ -46,7 +46,7 @@ class UserLoginTest < ActionDispatch::IntegrationTest
   test "unregistered user cannot view other user's profile" do
     user_logged_in
     visit user_path(user)
-    within("#flash-alert") do
+    within(".flash-alert") do
       assert page.has_content?("You Can't Go There...")
     end
   end
