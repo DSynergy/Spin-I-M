@@ -2,6 +2,7 @@ require 'test_helper'
 
 class UserLoginTest < ActionDispatch::IntegrationTest
   include Capybara::DSL
+  attr_reader :user
 
   def setup
     user = User.create(username: "george",
@@ -23,13 +24,16 @@ class UserLoginTest < ActionDispatch::IntegrationTest
     assert_equal playlists_path, current_path
   end
 
-  test "user cannot login without email and password" do
-
-  end
-
-  test "registered user can view their profile" do
-    ApplicationController
-  end
+  # test "user cannot login without email and password" do
+  #
+  # end
+  #
+  # test "registered user can view their profile" do
+  #   ApplicationController.any_instance.stubs(:current_user).returns(user)
+  #   save_and_open_page
+  #   visit user_path(user)
+  #   assert page.has_content?("Welcome george")
+  # end
 
 
 end
