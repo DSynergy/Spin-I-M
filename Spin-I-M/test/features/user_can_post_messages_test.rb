@@ -12,14 +12,15 @@ class UserMessageTest < ActionDispatch::IntegrationTest
     playlist = Playlist.create(name: "Hip Hop")
 
     visit playlist_path(playlist.id)
+    assert_equal playlist_path(playlist.id), current_path 
 
-    fill_in "message[new_message]", with: "new message"
-    click_on "submit message"
-    page.has_content?("new message")
-
-    fill_in "message[new_message]", with: "second message"
-    click_on "submit message"
-    page.has_content?("second message")
+    fill_in "message", with: "new message"
+    click_on "Be Heard!"
+    assert page.has_content?("new message")
+    fill_in "message", with: "second message"
+    click_on "Be Heard!"
+    assert page.has_content?("second message")
+    save_and_open_page
   end
 
   private

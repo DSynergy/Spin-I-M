@@ -1,0 +1,13 @@
+<h1><%= @playlist.name %></h1>
+
+<h3>Current Chat</h3>
+<div id="messages">
+</div>
+
+<p>
+<%= text_area_tag(:message, nil, size: "60x3") %>
+</p>
+
+<p>
+<button id="be_heard" input[type="submit"]>Be Heard!</button>
+</p>
