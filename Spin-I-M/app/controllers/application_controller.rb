@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   def user_logged_in_check
     if current_user.nil?
       redirect_to login_path
-      flash[:alert].now = "Unauthorized Access!"
+      flash[:alert] = "Unauthorized Access!"
     end
   end
 

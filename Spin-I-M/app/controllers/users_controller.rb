@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       redirect_to playlists_path
       flash[:success] = "Welcome to Your Spin-I-M"
     else
-      # flash[:error] = @user.errors.full_messages
+      flash[:error] = "Please try again"
       redirect_to new_user_path
     end
   end
