@@ -13,23 +13,14 @@ class UserLoginTest < ActionDispatch::IntegrationTest
 
   def user_logged_in
     create_user
-    visit root_path
-    click_link_or_button "Log In"
+    visit login_path
     fill_in "Email", with: "george.walker@bush.com"
     fill_in "Password", with: "password"
     click_link_or_button "Login To Spin-I-M"
   end
 
   test "user can log in" do
-    create_user
-    visit root_path
-
-    click_link_or_button "Log In"
-    assert_equal login_path, current_path
-    fill_in "Email", with: "george.walker@bush.com"
-    fill_in "Password", with: "password"
-
-    click_link_or_button "Login To Spin-I-M"
+    user_logged_in
     assert_equal playlists_path, current_path
   end
 

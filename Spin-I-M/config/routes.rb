@@ -1,12 +1,13 @@
 Rails.application.routes.draw do
 
-  root 'static_pages#home'
+  root 'playlists#index'
 
   resources :users
-  resources :playlists, only: [:index, :show]
+  resources :playlists
 
-  get    'login'   => 'sessions#new'
-  post   'login'   => 'sessions#create'
-  delete 'logout'  => 'sessions#destroy'
+  post   'login',  to: 'sessions#create'
+  get    'login',  to: 'sessions#new'
+
+  delete 'logout', to: 'sessions#destroy'
 
 end
