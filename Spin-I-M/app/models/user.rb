@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
+  has_many :playlists, through: :user_playlists
+
   before_save { self.email = email.downcase }
+  has_secure_password
 
   validates :username, presence: true
   validates :email, presence: true, length: { maximum: 75 },
@@ -7,8 +10,5 @@ class User < ActiveRecord::Base
   VALID_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates_format_of :email, :with => VALID_REGEX
 
-  has_many :playlists, through: :user_playlists
-  has_secure_password
   validates :password, presence: true, length: { minimum: 8 }
-
 end

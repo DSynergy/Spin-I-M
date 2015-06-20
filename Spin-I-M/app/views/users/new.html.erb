@@ -7,10 +7,14 @@
   <%= f.label :email %>
   <%= f.email_field :email, class: "form-control" %>
 
+  <em>
+    Passwords must be 8 characters in length
+  </em></br>
   <%= f.label :password  %>
   <%= f.password_field :password, class: "form-control" %>
 
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation, class: "form-control" %>
+
   <%= f.submit "Register For Spin-I-M" %>
 <% end %>
