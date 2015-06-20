@@ -23,6 +23,12 @@
 <h3>Voting/Queueing</h3>
 
 <% @songs.each do |song| %>
+  <div class="voting">
+    <div class="breadcrumb" id="breadcrumb-<%= song.id %>" style="margin: 14px;">
+      <a href="#" class="increasePopularity" data-id="<%= song.id %>">UP</a>
+      <a href="#" class="decreasePopularity" data-id="<%= song.id %>">DOWN</a>
+    </div>
+  </div>
   <ul class="bullets">
     <li class="bullet">
       <div class="bullet-icon bullet-icon-1">
@@ -32,16 +38,8 @@
       <div class="bullet-content">
         <h2><%= song.artist %></h2>
         <p> <%= song.title %></p>
+        <p id="song-score-<%= song.id %>"><%= song.popularity %></p>
       </div>
     </li>
   </ul>
 <% end %>
-
-
-<div class="breadcrumb">
-  <a href="javascript:void(0)">One</a>
-  <a href="javascript:void(0)">Two</a>
-  <a href="javascript:void(0)">Three</a>
-  <a href="javascript:void(0)">Four</a>
-  <a href="javascript:void(0)">Five</a>
-</div>
