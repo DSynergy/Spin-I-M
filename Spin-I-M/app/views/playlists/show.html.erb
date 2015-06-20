@@ -24,7 +24,7 @@
 
 <% @songs.each do |song| %>
   <div class="voting">
-    <div class="breadcrumb" style="margin: 14px;">
+    <div class="breadcrumb" id="breadcrumb-<%= song.id %>" style="margin: 14px;">
       <a href="#" class="increasePopularity" data-id="<%= song.id %>">UP</a>
       <a href="#" class="decreasePopularity" data-id="<%= song.id %>">DOWN</a>
     </div>

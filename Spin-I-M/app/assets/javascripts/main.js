@@ -18,6 +18,8 @@ $(document).ready(function () {
       url: "/songs/increase/" + songId,
       success: function(data) {
         $('#song-score-' + songId).replaceWith("<h5>" + data.popularity + "</h5>"); 
+        $('#breadcrumb-' + songId).replaceWith("<div> Thanks for voting! </div>");
+        return false;
       }
     });
   });
@@ -29,6 +31,8 @@ $(document).ready(function () {
       url: "/songs/decrease/" + songId,
       success: function(data) {
         $('#song-score-' + songId).replaceWith("<h5>" + data.popularity + "</h5>"); 
+        $('#breadcrumb-' + songId).replaceWith("<div> Thanks for voting! </div>");
+        return false;
       }
     });
   });
