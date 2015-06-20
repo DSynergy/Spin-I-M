@@ -9,6 +9,9 @@
      soundcloud.addEventListener('onPlayerReady', function(player, data) {
        player.api_play();
      });
+     soundcloud.addEventListener('onMediaEnd', function(player, data) {
+      player.api_next();
+     });
   </script>
 </head>
 <body>
