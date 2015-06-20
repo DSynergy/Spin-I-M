@@ -24,7 +24,10 @@
 
 <% @songs.each do |song| %>
   <div class="voting">
-    vote here!
+    <div class="breadcrumb" style="margin: 14px;">
+      <%= button_to "UP", increase_path(song) %>
+      <%= button_to "DOWN", decrease_path(song) %>
+    </div>
   </div>
   <ul class="bullets">
     <li class="bullet">
@@ -35,16 +38,8 @@
       <div class="bullet-content">
         <h2><%= song.artist %></h2>
         <p> <%= song.title %></p>
+        <p> <%= song.popularity %></p>
       </div>
     </li>
   </ul>
 <% end %>
-
-
-<div class="breadcrumb">
-  <a href="javascript:void(0)">One</a>
-  <a href="javascript:void(0)">Two</a>
-  <a href="javascript:void(0)">Three</a>
-  <a href="javascript:void(0)">Four</a>
-  <a href="javascript:void(0)">Five</a>
-</div>
