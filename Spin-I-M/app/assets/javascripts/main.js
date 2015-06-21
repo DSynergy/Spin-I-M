@@ -39,5 +39,17 @@ $(document).ready(function () {
     });
   });
 
-
 });
+
+function next_song() {
+  alert('hello');
+  var playListId = "1";
+  alert(playListId);
+  $.ajax({
+    method: 'GET',
+    url: "/playlists/" + playListId,
+    success: function(data) {
+      alert('success');
+    }
+  });
+}

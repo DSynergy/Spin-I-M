@@ -3,7 +3,7 @@ class Playlist < ActiveRecord::Base
   has_many :songs, through: :playlist_songs
   has_many :users, through: :user_playlists
 
-  attr_reader :queue, :current_song
+  attr_reader :queue
 
   def create_queue
     if @queue.nil?
@@ -15,12 +15,13 @@ class Playlist < ActiveRecord::Base
     queue
   end
 
-
-  def currently_playing
+  def first_song
     create_queue
-    @current_song = queue.first
-    queue.shift
-    current_song
+    queue.first
+  end
+
+  def next_song
+    queue.shift 
   end
 
   def shuffle_playlist

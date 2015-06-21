@@ -10,7 +10,7 @@
        player.api_play();
      });
      soundcloud.addEventListener('onMediaEnd', function(player, data) {
-       player.api_play();
+       player.api_load(next_song());
      });
   </script>
 </head>
