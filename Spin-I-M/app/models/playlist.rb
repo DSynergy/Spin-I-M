@@ -24,6 +24,10 @@ class Playlist < ActiveRecord::Base
     queue.shuffle
   end
 
+  def self.search_playlists(query)
+    where("name LIKE ?", "%#{query}%")
+  end
+
   def song_on_deck
     queue.second
   end
