@@ -3,9 +3,9 @@
 <h1><%= @playlist.name %></h1>
 
 <object height="81" width="100%" id="myPlayer" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000">
-  <param name="movie" value="http://player.soundcloud.com/player.swf?url=<%= @playlist.currently_playing%>&enable_api=true&object_id=myPlayer"></param>
+  <param name="movie" value="http://player.soundcloud.com/player.swf?url=<%= @playlist.first_song %>&enable_api=true&object_id=myPlayer"></param>
   <param name="allowscriptaccess" value="always"></param>
-  <embed allowscriptaccess="always" height="81" src="http://player.soundcloud.com/player.swf?url=<%= @playlist.currently_playing%>&enable_api=true&object_id=myPlayer" type="application/x-shockwave-flash" width="100%" name="myPlayer"></embed>
+  <embed allowscriptaccess="always" height="81" src="http://player.soundcloud.com/player.swf?url=<%= @playlist.first_song %>&enable_api=true&object_id=myPlayer" type="application/x-shockwave-flash" width="100%" name="myPlayer"></embed>
 </object>
 
 <h3>Current Chat</h3>
@@ -23,6 +23,12 @@
 <h3>Voting/Queueing</h3>
 
 <% @songs.each do |song| %>
+  <div class="voting">
+    <div class="breadcrumb" id="breadcrumb-<%= song.id %>" style="margin: 14px;">
+      <a href="#" class="increasePopularity" data-id="<%= song.id %>">UP</a>
+      <a href="#" class="decreasePopularity" data-id="<%= song.id %>">DOWN</a>
+    </div>
+  </div>
   <ul class="bullets">
     <li class="bullet">
       <div class="bullet-icon bullet-icon-1">
@@ -32,16 +38,8 @@
       <div class="bullet-content">
         <h2><%= song.artist %></h2>
         <p> <%= song.title %></p>
+        <p id="song-score-<%= song.id %>"><%= song.popularity %></p>
       </div>
     </li>
   </ul>
 <% end %>
-
-
-<div class="breadcrumb">
-  <a href="javascript:void(0)">One</a>
-  <a href="javascript:void(0)">Two</a>
-  <a href="javascript:void(0)">Three</a>
-  <a href="javascript:void(0)">Four</a>
-  <a href="javascript:void(0)">Five</a>
-</div>

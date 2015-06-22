@@ -6,18 +6,22 @@ class Playlist < ActiveRecord::Base
   attr_reader :queue
 
   def create_queue
-    @queue = []
-    self.songs.each do |song|
-      queue << song.url
+    if @queue.nil?
+      @queue = []
+      self.songs.each do |song|
+        queue << song.url
+      end
     end
     queue
   end
 
-  def currently_playing
+  def first_song
     create_queue
-    current_song = queue.first
-    queue.shift
-    current_song
+    queue.first
+  end
+
+  def next_song
+    queue.shift 
   end
 
   def shuffle_playlist

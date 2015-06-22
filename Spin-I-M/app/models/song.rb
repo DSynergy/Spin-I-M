@@ -6,5 +6,13 @@ class Song < ActiveRecord::Base
     playlist = Playlist.find(playlist_id)
     playlist.songs.order(popularity: :desc)
   end
+  
+  def increase_popularity
+    self.popularity += 1
+  end
+
+  def decrease_popularity
+    self.popularity -= 1
+  end
 
 end
