@@ -12,8 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require users
+//= require main
+//= require nav_bar
+//= require socket.io
+//= require popularity
 //= require bloodhound
 //= require typeahead.jquery
-//= require users
-//= require socket.io
 //= require_tree .
