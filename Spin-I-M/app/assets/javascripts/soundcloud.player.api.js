@@ -110,6 +110,7 @@
     // fired when the track/playlist has finished playing
     onMediaEnd : function(flashId, data) {
       this._redispatch('onMediaEnd', flashId, data);
+      window.location.reload(true);
     },
     // fired when widget starts playing current track (fired on every play, seek)
     onMediaPlay : function(flashId, data) {
