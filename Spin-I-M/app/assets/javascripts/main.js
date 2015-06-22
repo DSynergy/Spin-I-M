@@ -1,6 +1,5 @@
 $(document).ready(function () {
   var socket = io("http://localhost:3001");
-  var io = require('socket.io')(server, {origins: '*:*'});
 
   $('#be_heard').click(function () {
     var $new_message = $('#text_box').val();
@@ -11,7 +10,6 @@ $(document).ready(function () {
   socket.on('message', function(message){
     $('#messages').append("<li style='list-style-type: none;'>" + message.body + "</li>");
   });
-
 
   $('.increasePopularity').click(function(e) {
     e.preventDefault();
