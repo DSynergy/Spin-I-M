@@ -10,7 +10,8 @@
        player.api_play();
      });
      soundcloud.addEventListener('onMediaEnd', function(player, data) {
-      player.api_next();
+      window.player = player;
+      player.api_load("https://soundcloud.com/future-islands/doves-vince-clarke-remix");
      });
   </script>
 </head>
