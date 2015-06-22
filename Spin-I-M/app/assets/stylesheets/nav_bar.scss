@@ -322,7 +322,6 @@ header.navigation {
     }
 
     @include media($horizontal-bar-mode) {
-      display: inline-block;
       position: relative;
       width: 16em;
 

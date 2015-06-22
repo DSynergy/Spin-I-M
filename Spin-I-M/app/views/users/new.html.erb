@@ -2,19 +2,21 @@
   <%= render "shared/error_messages" %>
 
   <%= f.label :username %>
-  <%= f.text_field :username, class: "form-control" %>
+  <%= f.text_field :username, class: "form" %>
 
   <%= f.label :email %>
-  <%= f.email_field :email, class: "form-control" %>
+  <%= f.email_field :email, class: "form" %>
 
-  <em>
-    Passwords must be 8 characters in length
-  </em></br>
   <%= f.label :password  %>
-  <%= f.password_field :password, class: "form-control" %>
+  <%= f.password_field :password, class: "form", id: "pass1", required: true %>
 
   <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation, class: "form-control" %>
+  <%= f.password_field :password_confirmation, class: "form", id: "pass2", onkeyup: "checkPass(); return false;", required: true %>
+
+  <em>
+    <span id="lengthMessage" class="confirmMessage"></span></br>
+    <span id="confirmMessage" class="confirmMessage"></span>
+  </em></br>
 
   <%= f.submit "Register For Spin-I-M" %>
 <% end %>

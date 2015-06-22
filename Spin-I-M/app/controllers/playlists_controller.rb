@@ -2,7 +2,11 @@ class PlaylistsController < ApplicationController
   respond_to :json, :html
 
   def index
-    @playlists = Playlist.all
+    if params[:search] && params[:search] != ""
+      @playlists = Playlist.search_playlists(params[:search])
+    else
+      @playlists = Playlist.all
+    end
   end
 
   def show

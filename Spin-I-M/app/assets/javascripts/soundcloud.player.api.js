@@ -69,6 +69,7 @@
     },
     // get widget node based on its id (if object tag) or name (if embed tag)
     // if you're using SWFObject or other dynamic Flash generators, please make sure that you set the id parameter
+    // if you're using SWFObject or other dynamic Flash generators, please make sure that you set the id parameter
     //  only if the DOM has an id/name it's possible to call player's methods.
     // Important!: because of the bug in Opera browser, the Flash can't get its own id
     // so the generator should set it additionally through flashvars parameter 'object_id'
@@ -110,7 +111,6 @@
     // fired when the track/playlist has finished playing
     onMediaEnd : function(flashId, data) {
       this._redispatch('onMediaEnd', flashId, data);
-      window.location.reload(true);
     },
     // fired when widget starts playing current track (fired on every play, seek)
     onMediaPlay : function(flashId, data) {

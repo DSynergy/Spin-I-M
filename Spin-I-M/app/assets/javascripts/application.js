@@ -12,5 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bloodhound
+//= require typeahead.jquery
+//= require users
 //= require socket.io
 //= require_tree .
