@@ -12,7 +12,7 @@
       });
      soundcloud.addEventListener('onMediaEnd', function(player, data) {
       <% javascript_tag do %>
-        Session["queue"] = "<%= session[:queue].shift %>";
+        Session["queue"] = "<%= session[:queue].shift if session[:queue] !=nil %>";
       <% end %>
       window.location.reload(true);
      });

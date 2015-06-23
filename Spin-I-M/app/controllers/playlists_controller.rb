@@ -2,6 +2,7 @@ class PlaylistsController < ApplicationController
   respond_to :json, :html
 
   def index
+    session[:queue] = nil
     if params[:search] && params[:search] != ""
       @playlists = Playlist.search_playlists(params[:search])
     else
