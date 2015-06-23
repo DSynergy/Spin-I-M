@@ -17,6 +17,8 @@
 //= require nav_bar
 //= require socket.io
 //= require popularity
+//= require soundcloud.player.api
 //= require bloodhound
+//= require bloodhound_searcher
 //= require typeahead.jquery
 //= require_tree .

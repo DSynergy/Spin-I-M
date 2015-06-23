@@ -2,6 +2,7 @@ class PlaylistsController < ApplicationController
   respond_to :json, :html
 
   def index
+    session[:queue] = nil
     if params[:search] && params[:search] != ""
       @playlists = Playlist.search_playlists(params[:search])
     else
@@ -11,13 +12,16 @@ class PlaylistsController < ApplicationController
 
   def show
     @playlist = Playlist.find(params[:id])
-    @songs = Song.sort_by_popularity(@playlist.id)
-    first_song_url = @playlist.first_song
-    @playlist.next_song
-
-    respond_with do |format|
-      format.html {}
-      format.json { render json: first_song_url }
+    if session[:queue] == []
+      session[:queue] = nil
     end
+    session[:queue] ||= @playlist.songs.order(popularity: :desc).map(&:url)
+    @queue = session[:queue]
+    @songs = @queue.map {|url| Song.find_by(url: url)}
   end
+
+  def queue
+    @queue
+  end
+
 end
