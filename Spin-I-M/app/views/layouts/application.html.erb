@@ -5,15 +5,19 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+
   <script type="text/javascript">
-     soundcloud.addEventListener('onPlayerReady', function(player, data) {
+      soundcloud.addEventListener('onPlayerReady', function(player, data) {
        player.api_play();
-     });
+      });
      soundcloud.addEventListener('onMediaEnd', function(player, data) {
-      window.player = player;
-      player.api_load("https://soundcloud.com/future-islands/doves-vince-clarke-remix");
+      <% javascript_tag do %>
+        Session["queue"] = "<%= session[:queue].shift %>";
+      <% end %>
+      window.location.reload(true);
      });
   </script>
+
 </head>
 <body>
 

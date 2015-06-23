@@ -3,37 +3,26 @@ class Playlist < ActiveRecord::Base
   has_many :songs, through: :playlist_songs
   has_many :users, through: :user_playlists
 
-  attr_reader :queue
-
-  def create_queue
-    if @queue.nil?
-      @queue = []
-      self.songs.each do |song|
-        queue << song.url
-      end
-    end
-    queue
-  end
-
-  def first_song
-    create_queue
-    queue.first
-  end
-
-  def next_song
-    queue.shift 
-  end
-
-  def shuffle_playlist
-    queue.shuffle
-  end
-
   def self.search_playlists(query)
     where("name LIKE ?", "%#{query}%")
   end
 
-  def song_on_deck
-    queue.second
+  # def create_queue
+  #   playlist = Playlist.find(playlist_id)
+  #   @queue ||= playlist.songs.order(popularity: :desc).map(&:url)
+  # end
+
+  # def next_song
+  #   @queue.shift
+  # end
+
+
+  def shuffle_playlist
+    @queue.shuffle
   end
+
+  # def song_on_deck
+  #   queue.second
+  # end
 
 end
