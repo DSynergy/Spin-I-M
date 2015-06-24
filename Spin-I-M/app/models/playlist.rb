@@ -7,22 +7,8 @@ class Playlist < ActiveRecord::Base
     where("name LIKE ?", "%#{query}%")
   end
 
-  # def create_queue
-  #   playlist = Playlist.find(playlist_id)
-  #   @queue ||= playlist.songs.order(popularity: :desc).map(&:url)
-  # end
-
-  # def next_song
-  #   @queue.shift
-  # end
-
-
   def shuffle_playlist
     @queue.shuffle
   end
-
-  # def song_on_deck
-  #   queue.second
-  # end
 
 end
