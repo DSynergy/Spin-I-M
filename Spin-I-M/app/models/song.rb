@@ -4,17 +4,16 @@ class Song < ActiveRecord::Base
 
   attr_reader :playlist
 
-  # def self.sort_by_popularity(playlist_id)
-  #   find_playlist(playlist_id)
-  #   playlist.songs.order(popularity: :desc)
-  # end
-
   def increase_popularity
     self.popularity += 1
   end
 
   def decrease_popularity
-    self.popularity -= 1
+    if self.popularity > 0
+      self.popularity -= 1
+    else
+      self.popularity = 0
+    end
   end
-  
+
 end
