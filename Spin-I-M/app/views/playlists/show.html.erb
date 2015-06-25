@@ -35,11 +35,14 @@
         <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png
   " alt="">
       </div>
+
       <div class="bullet-content">
-        <h2><%= song.artist %></h2>
-        <p> <%= song.title %></p>
-        <p id="song-score-<%= song.id %>"><%= song.popularity %></p>
+        <div class="row">
+          <h2><%= song.artist %> : <%= song.title %>.           Popularity: <%= song.popularity %> </h2> 
+
+        </div>
       </div>
+
     </li>
   </ul>
 <% end %>
