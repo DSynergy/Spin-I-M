@@ -3,7 +3,7 @@ User.create(username: "user",
                        password: "password",
                        password_confirmation: "password")
 
-playlist = Playlist.create(name: "Hip Hop", image_url: "http://cdn.pitchfork.com/albums/9474/homepage_large.02cbc9b1.jpg")
+playlist = Playlist.create(name: "Hip Hop", image_url: "https://avatars.githubusercontent.com/u/7894293?v=3")
 
 playlist.songs.create(artist: "Snoop Dogg", title: "Serial Killer", url: "https://soundcloud.com/user714971037/sets/snoop-dogg-serial-killa")
 playlist.songs.create(artist: "Damian Marley", title: "Cypress Hill & Rusko feat Damian Marley - Can't Keep Me Down", url: "https://soundcloud.com/damianmarley/cypress-hill-rusko-feat-damian")
