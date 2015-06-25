@@ -3,26 +3,26 @@ User.create(username: "user",
                        password: "password",
                        password_confirmation: "password")
 
-playlist = Playlist.create(name: "Hip Hop", image_url: "http://cdn.pitchfork.com/albums/9474/homepage_large.02cbc9b1.jpg")
+playlist = Playlist.create(name: "Snoop Doggy Shea", image_url: "https://avatars.githubusercontent.com/u/7894293?v=3", description: "Raise the roof while crushing your weekly survey. Feedback for Horace... that kind of looks like a lesson.")
 
 playlist.songs.create(artist: "Snoop Dogg", title: "Serial Killer", url: "https://soundcloud.com/user714971037/sets/snoop-dogg-serial-killa")
 playlist.songs.create(artist: "Damian Marley", title: "Cypress Hill & Rusko feat Damian Marley - Can't Keep Me Down", url: "https://soundcloud.com/damianmarley/cypress-hill-rusko-feat-damian")
 playlist.songs.create(artist: "Pretty Lights", title: "Jay Z Empire State Of Mind Remix", url: "https://soundcloud.com/prettylights/pretty-lights-jay-z-empire")
 
-playlist2 = Playlist.create(name: "House", image_url: "http://djautograph.com/wp-content/uploads/2013/10/House_Music_by_Labelrx.png")
+playlist2 = Playlist.create(name: "House", image_url: "http://djautograph.com/wp-content/uploads/2013/10/House_Music_by_Labelrx.png", description: "Are you ready to do logic puzzles!!!")
 
 playlist2.songs.create(artist: "David August", title: "Epikur", url: "https://soundcloud.com/frankyboy-1/david-august-epikur")
 playlist2.songs.create(artist: "Bonobo", title: "First Fires - Maya Jane Coles Remix", url: "https://soundcloud.com/mayajanecoles/bonobo-first-fires-feat-grey-1")
 playlist2.songs.create(artist: "Moderat", title: "A New Error", url: "https://soundcloud.com/bpitch-control/moderat-a-new-error")
 playlist2.songs.create(artist: "Avatism", title: "Mastadon - Mind Against Remix", url: "https://soundcloud.com/technochickens/avatism-mastodon-mind-against")
 
-playlist3 = Playlist.create(name: "Mac's Selections", image_url: "https://avatars2.githubusercontent.com/u/8164007?v=3&s=400")
+playlist3 = Playlist.create(name: "The Big Mac", image_url: "https://avatars2.githubusercontent.com/u/8164007?v=3&s=400", description: "Easy listening for my walk home from Turing right before lightning talks begin ;)")
 
 playlist3.songs.create(artist: "Ratatat", title: "Seventeen Years", url: "https://soundcloud.com/rochielle-parkes/ratatat-seventeen-years")
 playlist3.songs.create(artist: "Black Keys", title: "Little Black Submarines", url: "https://soundcloud.com/matrem/little-black-submarines-the")
 playlist3.songs.create(artist: "The Heavy", title: "Colleen", url: "https://soundcloud.com/swag-the-blog/the-heavy-coleen-feat-the-dap")
 
-playlist4 = Playlist.create(name: "Dustin's Selections", image_url: "https://avatars2.githubusercontent.com/u/7361182?v=3&s=460")
+playlist4 = Playlist.create(name: "DJ Dustin", image_url: "https://avatars2.githubusercontent.com/u/7361182?v=3&s=460", description: "Prepare to 'GEAR UP' for an a$$ whoopin!!!")
 
 playlist4.songs.create(artist: "Eli and Fur", title: "You're So High", url: "https://soundcloud.com/eliandfur/youre-so-high")
 playlist4.songs.create(artist: "Mt. Eden", title: "Still Alive", url: "https://soundcloud.com/mtedenofficial/mt-eden-still-alive")
