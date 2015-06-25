@@ -6,7 +6,7 @@
   <div class="card">
     <a href="/playlists/<%=playlist.id %>">
       <div class="card-image">
-          <%# img_tag("#{playlist.currently_playing.image}") %>
+        <%= image_tag(playlist.image_url) %>
       </div>
 
       <div class="card-header">
