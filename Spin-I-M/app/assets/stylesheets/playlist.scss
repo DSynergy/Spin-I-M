@@ -1,3 +1,8 @@
+#be_heard {
+  width: 250px;
+  background-color: red;
+}
+
 .breadcrumb {
   $base-border-color: gainsboro !default;
   $base-border-radius: 3px !default;
@@ -113,6 +118,7 @@
   .bullet-icon {
     background: $action-color;
     border-radius: 50%;
+    margin-top: 21px;
     float: left;
     height: $icon-bullet-size;
     padding: $icon-bullet-size / 4;
@@ -172,4 +178,9 @@
 
 .decreasePopularity img {
   margin-top: 15px;
+}
+
+
+.popularity-count {
+
 }
