@@ -1,3 +1,8 @@
+body {
+  background-image: url(music_background.jpg);
+  color: white;
+}
+
 .cards {
   background-color: black;
   @include display(flex);
