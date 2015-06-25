@@ -13,33 +13,40 @@
 </div>
 
 <p>
-  <%= text_area_tag(:message, nil, size: "60x3", id: "text_box") %>
+  <%= text_area_tag(:message, nil, size: "60x3", id: "text_box", placeholder: "Keep it classy...") %>
 </p>
 
 <p>
 <button id="be_heard" input[type="submit"]>Be Heard!</button>
 </p>
 
-<h3>Voting/Queueing</h3>
+  <h3>Voting/Queueing</h3>
 
-<% @songs.each do |song| %>
-  <div class="voting">
-    <div class="breadcrumb" id="breadcrumb-<%= song.id %>" style="margin: 14px;">
-      <a href="#" class="increasePopularity" data-id="<%= song.id %>"> <%= image_tag("Thumb_up.png", size: "45") %></a>
-      <a href="#" class="decreasePopularity" data-id="<%= song.id %>"><%= image_tag("downvotehand.png", size: "45") %></a>
+  <% @songs.each do |song| %>
+    <div class="voting">
+      <div class="breadcrumb" id="breadcrumb-<%= song.id %>" style="margin: 14px;">
+        <a href="#" class="increasePopularity" data-id="<%= song.id %>"> <%= image_tag("Thumb_up.png", size: "45") %></a>
+        <a href="#" class="decreasePopularity" data-id="<%= song.id %>"><%= image_tag("downvotehand.png", size: "45") %></a>
+      </div>
     </div>
-  </div>
-  <ul class="bullets">
-    <li class="bullet">
-      <div class="bullet-icon bullet-icon-1">
-        <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png
-  " alt="">
+    <ul class="bullets">
+      <div class="row">
+        <li class="bullet">
+          <div class="bullet-icon bullet-icon-1">
+            <img src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/placeholder_logo_2.png
+      " alt="">
+          </div>
+
+          <div class="bullet-content">
+              <div class="info ">
+                <h2><%= song.artist %> : <%= song.title %> </h2>
+              </div>
+              <div id="song-score-<%= song.id %>" class="popularity-count">
+                <h2>Popularity: <%= song.popularity %></h2>
+              </div>
+          </div>
+
+        </li>
       </div>
-      <div class="bullet-content">
-        <h2><%= song.artist %></h2>
-        <p> <%= song.title %></p>
-        <p id="song-score-<%= song.id %>"><%= song.popularity %></p>
-      </div>
-    </li>
-  </ul>
-<% end %>
+    </ul>
+  <% end %>

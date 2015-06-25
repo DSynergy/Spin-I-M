@@ -1,3 +1,8 @@
+#be_heard {
+  width: 250px;
+  background-color: red;
+}
+
 .breadcrumb {
   $base-border-color: gainsboro !default;
   $base-border-radius: 3px !default;
@@ -113,6 +118,7 @@
   .bullet-icon {
     background: $action-color;
     border-radius: 50%;
+    margin-top: 21px;
     float: left;
     height: $icon-bullet-size;
     padding: $icon-bullet-size / 4;
@@ -138,10 +144,12 @@
 
   h2 {
     border-bottom: 1px solid transparentize($base-font-color, 0.8);
+    text-shadow: 2px 2px black;
     display: inline-block;
     font-size: $icon-bullet-size / 2.5;
     margin: 0 0 ($icon-bullet-size / 6) 0;
     padding-top: $icon-bullet-size / 7;
+    color: white;
   }
 
   li {
@@ -170,4 +178,9 @@
 
 .decreasePopularity img {
   margin-top: 15px;
+}
+
+
+.popularity-count {
+
 }

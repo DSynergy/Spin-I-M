@@ -3,7 +3,7 @@ User.create(username: "user",
                        password: "password",
                        password_confirmation: "password")
 
-playlist = Playlist.create(name: "Snoop Doggy Shea", image_url: "https://avatars.githubusercontent.com/u/7894293?v=3", description: "Raise the roof while crushing your weekly survey. Feedback for Horace... that kind of looks like a lesson.")
+playlist = Playlist.create(name: "Snoop Doggy Shea", image_url: "https://avatars.githubusercontent.com/u/7894293?v=3", description: "Raise the roof while crushing your weekly survey. Feedback for Horace: that kind of looks like a lesson...")
 
 playlist.songs.create(artist: "Snoop Dogg", title: "Serial Killer", url: "https://soundcloud.com/user714971037/sets/snoop-dogg-serial-killa")
 playlist.songs.create(artist: "Damian Marley", title: "Cypress Hill & Rusko feat Damian Marley - Can't Keep Me Down", url: "https://soundcloud.com/damianmarley/cypress-hill-rusko-feat-damian")
@@ -16,7 +16,7 @@ playlist2.songs.create(artist: "Bonobo", title: "First Fires - Maya Jane Coles R
 playlist2.songs.create(artist: "Moderat", title: "A New Error", url: "https://soundcloud.com/bpitch-control/moderat-a-new-error")
 playlist2.songs.create(artist: "Avatism", title: "Mastadon - Mind Against Remix", url: "https://soundcloud.com/technochickens/avatism-mastodon-mind-against")
 
-playlist3 = Playlist.create(name: "The Big Mac", image_url: "https://avatars2.githubusercontent.com/u/8164007?v=3&s=400", description: "Easy listening for my walk home from Turing right before lightning talks begin ;)")
+playlist3 = Playlist.create(name: "Mac-a-licious", image_url: "https://avatars2.githubusercontent.com/u/8164007?v=3&s=400", description: "Easy listening for my walk home from Turing right before lightning talks begin ;)")
 
 playlist3.songs.create(artist: "Ratatat", title: "Seventeen Years", url: "https://soundcloud.com/rochielle-parkes/ratatat-seventeen-years")
 playlist3.songs.create(artist: "Black Keys", title: "Little Black Submarines", url: "https://soundcloud.com/matrem/little-black-submarines-the")
