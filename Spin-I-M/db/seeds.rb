@@ -1,8 +1,7 @@
 User.create(username: "user",
                        email: "user@example.com",
                        password: "password",
-                       password_confirmation: "password"
-                       )
+                       password_confirmation: "password")
 
 playlist = Playlist.create(name: "Snoop Doggy Shea", image_url: "https://avatars.githubusercontent.com/u/7894293?v=3", description: "Raise the roof while crushing your weekly survey. Feedback for Horace...that kind of looks like a lesson.")
 
