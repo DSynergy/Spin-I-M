@@ -1,5 +1,7 @@
+const username = current_user;
+
 $(document).ready(function () {
-  var socket = io("http://localhost:3001");
+  var socket = io.connect("http://localhost:3001");
 
   $('#be_heard').click(function () {
     var $new_message = $('#text_box').val();
@@ -7,20 +9,22 @@ $(document).ready(function () {
     socket.send('message', {body: $new_message});
   });
 
-  socket.on('message', function(message){
-    $('#messages').append("<li style='list-style-type: none;'>" + message.body + "</li>");
-  });
-});
+  // socket.on('message', function(message){
+  //   $('#messages').append("<li style='list-style-type: none;'>" + message.body + "</li>");
+  // });
+  socket.on('message', function (username, message) {
+    debugger
 
-function next_song() {
-  alert('hello');
-  var playListId = "1";
-  alert(playListId);
-  $.ajax({
-    method: 'GET',
-    url: "/playlists/" + playListId,
-    success: function(data) {
-      alert('success');
-    }
-  });
-}
+		$('#messages').append("<li style='list-style-type: none;'>" +
+                          '<b>' + username + ':</b>' +
+                          message.body + "</li>" + '<br>');
+	});
+
+  socket.on('updateusers', function(data) {
+		$('#users').empty();
+		$.each(data, function(key, value) {
+			$('#users').append('<div>' + key + '</div>');
+		});
+	});
+
+});
