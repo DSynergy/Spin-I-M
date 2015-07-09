@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
+      session[:username] = @user.username
       redirect_to playlists_path
       flash[:success] = "Welcome to Your Spin-I-M"
     else
