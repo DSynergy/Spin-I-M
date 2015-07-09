@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   before_action :user_logged_in_check
   helper_method :current_user, :queue
+  before_action :set_user
 
   def user_logged_in_check
     if current_user.nil?
@@ -17,6 +18,9 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
+  def set_user
+    cookies[:username] = current_user.username if current_user
+  end
 
 
 end
