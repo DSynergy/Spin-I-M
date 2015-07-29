@@ -23,7 +23,7 @@ playlist3.songs.create(artist: "Ratatat", title: "Seventeen Years", url: "https:
 playlist3.songs.create(artist: "Black Keys", title: "Little Black Submarines", url: "https://soundcloud.com/matrem/little-black-submarines-the")
 playlist3.songs.create(artist: "The Heavy", title: "Colleen", url: "https://soundcloud.com/swag-the-blog/the-heavy-coleen-feat-the-dap")
 
-playlist5 = Playlist.create(name: "Rock", image_url: "https://upload.wikimedia.org/wikipedia/commons/b/b4/Logan_Rock_Treen_closeup.jpg", decription: "Don't take my sweet selections for granite")
+playlist5 = Playlist.create(name: "Rock", image_url: "https://upload.wikimedia.org/wikipedia/commons/b/b4/Logan_Rock_Treen_closeup.jpg", description: "Don't take my sweet selections for granite")
 
 playlist5.songs.create(artist: "Led Zepplin", title: "Kashmir", url: "https://soundcloud.com/kuploadr2/led-zeppelin-kashmir")
 playlist5.songs.create(artist: "Queens of the Stone Age", title: "Mosquito Song", url: "https://soundcloud.com/postal-lady/queens-of-the-stone-age-mosquito-song")
@@ -37,18 +37,18 @@ playlist2.songs.create(artist: "Bonobo", title: "First Fires - Maya Jane Coles R
 playlist2.songs.create(artist: "Moderat", title: "A New Error", url: "https://soundcloud.com/bpitch-control/moderat-a-new-error")
 playlist2.songs.create(artist: "Avatism", title: "Mastadon - Mind Against Remix", url: "https://soundcloud.com/technochickens/avatism-mastodon-mind-against")
 
-playlist6 = Playlist.create(name: "BubbleGum Pop", image_url: "http://allsense.com.sg/wp-content/uploads/2014/05/bubblegum.jpg", decription: "Blow it up like it is 1999")
+playlist6 = Playlist.create(name: "BubbleGum Pop", image_url: "http://allsense.com.sg/wp-content/uploads/2014/05/bubblegum.jpg", description: "Blow it up like it is 1999")
 
 playlist6.songs.create(artist: "Marilyn Manson", title: "Dope Show", url: "https://soundcloud.com/jaqueline-olivera-1/the-dope-show-marilyn-manson")
 playlist6.songs.create(artist: "Rammstein", title: "Du Hast", url: "https://soundcloud.com/biggie-4/rammstein-du-hast")
 
-playlist7 = Playlist.create(name: "World", image_url: "http://svprojectmanagement.com/wp-content/uploads/2011/06/world-music.jpg", decription: "Welcome to the Wide World Baby")
+playlist7 = Playlist.create(name: "World", image_url: "http://svprojectmanagement.com/wp-content/uploads/2011/06/world-music.jpg", description: "Welcome to the Wide World Baby")
 
 playlist7.songs.create(artist: "Ana Tijoux", title: "1977", url: "https://soundcloud.com/nacional-records/ana-tijoux-1977")
 playlist7.songs.create(artist: "Gotan Project", title: "Diferente", url: "https://soundcloud.com/basmu/diferente-gotan-project")
 playlist7.songs.create(artist: "Stromae", title: "Tous la Memes", url: "https://soundcloud.com/dimario974/tous-les-memes-promuzix-zz-mu")
 
-playlist8 = Playlist.create(name: "Trip-Hop", image_url: "http://www.music-bazaar.com/album-images/vol12/613/613137/2456378-big/Trip-Hop-Finest-Tunes-cover.jpg", decription: "Like Hip-Hop but Trippy")
+playlist8 = Playlist.create(name: "Trip-Hop", image_url: "http://www.music-bazaar.com/album-images/vol12/613/613137/2456378-big/Trip-Hop-Finest-Tunes-cover.jpg", description: "Like Hip-Hop but Trippy")
 
 playlist8.songs.create(artist: "Massive Attack", title: "Angel", url: "https://soundcloud.com/salvatorecorsi/angel")
 playlist8.songs.create(artist: "Sneaker Pimps", title: "6 Underground", url: "https://soundcloud.com/justabitill-4/sneaker-pimps-6-underground")
